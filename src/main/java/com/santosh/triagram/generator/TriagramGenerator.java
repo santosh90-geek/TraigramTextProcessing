@@ -12,6 +12,8 @@ import com.santosh.triagram.utils.Constants.Severity;
 public class TriagramGenerator {
 	private final Map<String, ArrayList<String>> trigram = new HashMap<>();
 
+	
+
 	public Map<String, ArrayList<String>> getTrigram() {
 
 		return trigram;
@@ -58,5 +60,7 @@ public class TriagramGenerator {
 			}
 		}
 	}
+	
+	
 
 }

@@ -2,12 +2,14 @@ package com.santosh.triagram.utils;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.santosh.triagram.utils.Constants.Severity;
 
 public class CommonUtil {
+	private final static Random random = new Random(System.currentTimeMillis());
 
 	public static void printMessage(Severity type, String message) {
 		String messageForPrint = "[" + type + "] : " + message;
@@ -44,7 +46,8 @@ public class CommonUtil {
 	}
 
 	public static Integer pickRandom(Integer max) {
-		return ThreadLocalRandom.current().nextInt(0, max);
+		
+		return random.nextInt(max);
 	}
 
 }

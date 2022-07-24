@@ -9,21 +9,17 @@ import com.santosh.triagram.utils.Constants;
 import com.santosh.triagram.utils.Constants.Severity;
 
 public class MutatedTextGenerator {
-	private int textLength;
+	
 	private String resultingText;
 
 	public MutatedTextGenerator() {
 
-		this.textLength = Constants.requiredLength;
+		
 		this.resultingText = Constants.resultingText;
 
 	}
 
-	public void setTextLength(Integer textLength) {
-
-		this.textLength = textLength;
-	}
-
+	
 	public String getResultingText() {
 
 		return this.resultingText;
@@ -47,7 +43,7 @@ public class MutatedTextGenerator {
 		generatedList.add(CommonUtil.separate(startingWords).get(1));
 		String key = startingWords;
 		int lastPositionPointer = 1;
-		while (trigram.containsKey(key) && generatedList.size() <= this.textLength) {
+		while (trigram.containsKey(key)) {
 			ArrayList<String> nextWordCandidates = trigram.get(key);
 			String nextWord = nextWordCandidates.get(CommonUtil.pickRandom(nextWordCandidates.size()));
 			if (nextWord.contains(".")) {

@@ -16,7 +16,6 @@ public class ClientImplementation {
 	private static final FileOperation fileOperation = new FileOperation();
 	private static File inputFile;
 	private static String inputFileName;
-	private static Integer outputLength;
 	private static TriagramGenerator triagramGenerator = new TriagramGenerator();
 	private static MutatedTextGenerator mutatedTextGenerator = new MutatedTextGenerator();
 
@@ -29,19 +28,17 @@ public class ClientImplementation {
 			fileOperation.optionsPrinter(availableFiles);
 			inputFileName = availableFiles.get(CommonUtil.userInput("Select File", 0, availableFiles.size() - 1));
 			inputFile = new File(Constants.dataDirectory + "/" + inputFileName);
-			outputLength = CommonUtil.userInput("Select a length (in words) for the output",
-					Constants.minimumOutputLength, Constants.maximumOutputLength);
-
+			
 		} catch (Exception e) {
+			CommonUtil.printMessage(Severity.ERROR, "Error while file operation from user input:");
 
 		}
 
 		fileOperation.readFile(inputFile);
 		triagramGenerator.parseData(fileOperation.getInputText());
-		mutatedTextGenerator.setTextLength(outputLength);
 		mutatedTextGenerator.generateText(triagramGenerator.getTrigram());
 		LocalDate localDate = LocalDate.now(ZoneId.of("GMT+01:00"));
-		fileOperation.writeToFile(mutatedTextGenerator.getResultingText(), inputFileName + "_" + localDate + ".txt");
+		fileOperation.textWriter(mutatedTextGenerator.getResultingText(), inputFileName + "_" + localDate + ".txt");
 
 	}
 

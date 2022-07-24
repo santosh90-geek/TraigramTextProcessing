@@ -51,10 +51,10 @@ public class FileOperation {
 		}
 	}
 
-	public void writeToFile(String generatedText, String filename) {
-		File destinationFile = new File(Constants.outputDataDirectory + "/" + filename);
+	public void textWriter(String generatedText, String filename) {
+		File outputFile = new File(Constants.outputDataDirectory + "/" + filename);
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(destinationFile));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
 			writer.write(generatedText);
 			writer.close();
 
