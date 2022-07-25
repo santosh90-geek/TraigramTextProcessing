@@ -10,7 +10,7 @@ This can also be packaged as jar and execute
 
 **User Inputs:-
 User are required to place the file for which mutated text is to be generated inside inputData Folder.
-On console they need to select the file from  inputData Folder and provide the length of output file.
+On console they need to select the file from  inputData Folder.
 
 ** Classes and Usage:-
 ClientImplementaion.java contains main method and responsible for calling all the functionalitis within,
