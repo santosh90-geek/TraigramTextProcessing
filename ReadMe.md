@@ -21,6 +21,6 @@ Utils package contains common constant and helper methods for logging Working wi
 
 
 **Note- This program takes file as input and removes all the special chracters  from them and processes it.
-In case of more than one value is possible for given key (two consecutive words from text) we are selecting randon value using ThreadLocal
+In case of more than one value is possible for given key (two consecutive words from text) we are selecting randon value 
 
 **
